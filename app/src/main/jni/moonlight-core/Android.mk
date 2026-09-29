@@ -29,21 +29,21 @@ LOCAL_SRC_FILES := moonlight-common-c/src/AudioStream.c \
                    moonlight-common-c/src/VideoDepacketizer.c \
                    moonlight-common-c/src/VideoStream.c \
                    moonlight-common-c/reedsolomon/rs.c \
-                   moonlight-common-c/enet/callbacks.c \
-                   moonlight-common-c/enet/compress.c \
-                   moonlight-common-c/enet/host.c \
-                   moonlight-common-c/enet/list.c \
-                   moonlight-common-c/enet/packet.c \
-                   moonlight-common-c/enet/peer.c \
-                   moonlight-common-c/enet/protocol.c \
-                   moonlight-common-c/enet/unix.c \
-                   moonlight-common-c/enet/win32.c \
+                   moonlight-common-c/enet/enet/callbacks.c \
+                   moonlight-common-c/enet/enet/compress.c \
+                   moonlight-common-c/enet/enet/host.c \
+                   moonlight-common-c/enet/enet/list.c \
+                   moonlight-common-c/enet/enet/packet.c \
+                   moonlight-common-c/enet/enet/peer.c \
+                   moonlight-common-c/enet/enet/protocol.c \
+                   moonlight-common-c/enet/enet/unix.c \
+                   moonlight-common-c/enet/enet/win32.c \
                    simplejni.c \
                    callbacks.c \
                    minisdl.c \
 
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/moonlight-common-c/enet/include \
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/moonlight-common-c/enet/enet/include \
                     $(LOCAL_PATH)/moonlight-common-c/reedsolomon \
                     $(LOCAL_PATH)/moonlight-common-c/src \
 

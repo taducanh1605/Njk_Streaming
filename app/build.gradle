@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+def appBuildDirOverride = System.getenv("ARTEMIS_APP_BUILD_DIR")
+if (appBuildDirOverride == null || appBuildDirOverride.isEmpty()) {
+    appBuildDirOverride = new File(System.getProperty("java.io.tmpdir"), "artemis-moonlight-build/app").absolutePath
+}
+layout.buildDirectory.set(file(appBuildDirOverride))
+
 android {
     ndkVersion "27.0.12077973"
 
@@ -11,8 +17,8 @@ android {
         minSdk 21
         targetSdk 34
 
-        versionName "20.2.6"
-        versionCode = 57
+        versionName "20.2.7"
+        versionCode = 1
 
         // Generate native debug symbols to allow Google Play to symbolicate our native crashes
         ndk.debugSymbolLevel = 'FULL'
@@ -96,9 +102,9 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".noirdebug"
-            resValue "string", "app_label", "Diana"
-            resValue "string", "app_label_root", "Diana (Root)"
-            resValue "string", "app_label_game", "Diana (Game)"
+            resValue "string", "app_label", "Njk Streaming"
+            resValue "string", "app_label_root", "Njk Streaming (Root)"
+            resValue "string", "app_label_game", "Njk Streaming (Game)"
 
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -135,9 +141,9 @@ android {
             //
             // TL;DR: Leave the following line alone!
             applicationIdSuffix ".noir"
-            resValue "string", "app_label", "Artemis"
-            resValue "string", "app_label_root", "Artemis (Root)"
-            resValue "string", "app_label_game", "Artemis (Game)"
+            resValue "string", "app_label", "Njk Streaming"
+            resValue "string", "app_label_root", "Njk Streaming (Root)"
+            resValue "string", "app_label_game", "Njk Streaming (Game)"
 
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

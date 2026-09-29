@@ -6,6 +6,7 @@ output.json
 output-metadata.json
 out/
 baselineProfiles/
+app/src/main/jni/moonlight-core/moonlight-common-c/
 
 # files for the dex VM
 *.dex
@@ -47,3 +48,4 @@ app/.externalNativeBuild/
 
 # agent files
 AGENTS.md
+.vscode/settings.json

@@ -18,18 +18,18 @@ allprojects {
 }
 
 // Aggregate all variant/unit tests under the root `test` task
-gradle.projectsEvaluated {
-    def agg = tasks.findByName('test') ?: tasks.register('test') {
-        group = 'verification'
-        description = 'Runs every unit-test task in all sub-projects'
-    }
+// gradle.projectsEvaluated {
+//     def agg = tasks.findByName('test') ?: tasks.register('test') {
+//         group = 'verification'
+//         description = 'Runs every unit-test task in all sub-projects'
+//     }
 
-    subprojects.each { p ->
-        p.tasks.matching { it.name.endsWith('UnitTest') }.all { t ->
-            agg.configure { dependsOn t }
-        }
-    }
-}
+//     subprojects.each { p ->
+//         p.tasks.matching { it.name.endsWith('UnitTest') }.all { t ->
+//             agg.configure { dependsOn t }
+//         }
+//     }
+// }
 
 subprojects { subProj ->
     subProj.tasks.withType(Test).configureEach {
